@@ -104,6 +104,66 @@ class Commands {
         
     }
     
+    //less than function
+    func lessThan() {
+        if M[s-1] < M[s]{
+            M[s-1] = 1
+        }else{
+            M[s-1] = 0
+        }
+        s = s-1
+    }
+    
+    //greater than function
+    func greaterThan() {
+        if M[s-1] > M[s]{
+            M[s-1] = 1
+        }else{
+            M[s-1] = 0
+        }
+        s = s-1
+    }
+    
+    //equal than function
+    func equalThan() {
+        if M[s-1] == M[s]{
+            M[s-1] = 1
+        }else{
+            M[s-1] = 0
+        }
+        s = s-1
+    }
+    
+    //different than function
+    func diferentThan() {
+        if M[s-1] != M[s]{
+            M[s-1] = 1
+        }else{
+            M[s-1] = 0
+        }
+        s = s-1
+    }
+    
+    //less or equal than function
+    func lessEqualThan() {
+        if M[s-1] <= M[s]{
+            M[s-1] = 1
+        }else{
+            M[s-1] = 0
+        }
+        s = s-1
+    }
+    
+    //greater or equal than function
+    func greaterEqualThan() {
+        if M[s-1] >= M[s]{
+            M[s-1] = 1
+        }else{
+            M[s-1] = 0
+        }
+        s = s-1
+    }
+    
     
     
     //start Function
@@ -198,16 +258,22 @@ class Commands {
             neg()
             break
         case "CME":
+            lessThan()
             break
         case "CMA":
+            greaterThan()
             break
         case "CEQ":
+            equalThan()
             break
         case "CDIF":
+            diferentThan()
             break
         case "CMEQ":
+            lessEqualThan()
             break
         case "CMAQ":
+            greaterEqualThan()
             break
         case "START":
             startProgram()
