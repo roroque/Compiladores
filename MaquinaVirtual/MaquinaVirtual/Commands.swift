@@ -15,7 +15,7 @@ class Commands {
     var inputView : NSTextView
     
     //Engine variables
-    var s : Int = -1
+    var s : Int = 0
     var M : [Int] = []
     
     //class init
@@ -26,6 +26,36 @@ class Commands {
     }
     
     //Virtual Machine Functions
+    
+  
+    //ldc function
+    func loadConstant(k : Int) {
+        s = s + 1
+        M[s] = k
+        
+    }
+    
+    //ldv function
+    func loadValue(n : Int) {
+        s = s + 1
+        M[s] = M[n]
+        
+    }
+    
+    
+    //start Function
+    func startProgram() {
+        
+        s = -1
+        
+        //olhar melhor essa logica
+    }
+    
+    //halt function
+    func haltProgram() {
+        //olhar melhor essa logica
+        
+    }
     
     //printing Funtion
     func printOutput(){
@@ -75,14 +105,70 @@ class Commands {
     
     //Switch for functions
     
-    func callFunctionWithCommand(command : String,firstParameter : String?, secondParameter : String?){
+    func callFunctionWithCommand(command : String,firstParameter : Int?, secondParameter : Int?){
         
         switch command {
-        case "PRN":
-            printOutput()
+        case "LDC":
+            loadConstant(firstParameter!)
+            break
+        case "LDV":
+            loadValue(firstParameter!)
+            break
+        case "ADD":
+            break
+        case "SUB":
+            break
+        case "MULT":
+            break
+        case "DIVI":
+            break
+        case "INV":
+            break
+        case "AND":
+            break
+        case "OR":
+            break
+        case "NEG":
+            break
+        case "CME":
+            break
+        case "CMA":
+            break
+        case "CEQ":
+            break
+        case "CDIF":
+            break
+        case "CMEQ":
+            break
+        case "CMAQ":
+            break
+        case "START":
+            startProgram()
+            break
+        case "HLT":
+            haltProgram()
+            break
+        case "STR":
+            break
+        case "JMP":
+            break
+        case "JMPF":
+            break
+        case "NULL":
             break
         case "RD":
             startReading()
+            break
+        case "PRN":
+            printOutput()
+            break
+        case "ALLOC":
+            break
+        case "DALLOC":
+            break
+        case "CALL":
+            break
+        case "RETURN":
             break
             
         default:
