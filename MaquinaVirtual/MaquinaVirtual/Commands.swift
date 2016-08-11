@@ -70,10 +70,44 @@ class Commands {
         
     }
     
+    //inv function
+    func invert() {
+        M[s] = -M[s]
+        
+    }
+    
+    //and function
+    func and(){
+        if M[s-1] == 1 && M[s] == 1 {
+            M[s-1] = 1
+        }else{
+            M[s-1] = 0
+        }
+        s = s-1
+        
+    }
+    
+    //or function
+    func or(){
+        if M[s-1] == 1 || M[s] == 1 {
+            M[s-1] = 1
+        }else{
+            M[s-1] = 0
+        }
+        s = s-1
+        
+    }
+    
+    //neg function
+    func neg(){
+        M[s] = 1 - M[s]
+        
+    }
+    
+    
     
     //start Function
     func startProgram() {
-        
         s = -1
         
         //olhar melhor essa logica
@@ -87,11 +121,8 @@ class Commands {
     
     //printing Funtion
     func printOutput(){
-        
-        
         printInAView(M[s].description, aTextView: outputView)
         s = s-1
-        
         
     }
     
@@ -155,12 +186,16 @@ class Commands {
             div()
             break
         case "INV":
+            invert()
             break
         case "AND":
+            and()
             break
         case "OR":
+            or()
             break
         case "NEG":
+            neg()
             break
         case "CME":
             break
