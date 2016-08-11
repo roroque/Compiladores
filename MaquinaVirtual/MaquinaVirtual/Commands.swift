@@ -56,6 +56,20 @@ class Commands {
         
     }
     
+    //mult function
+    func mult() {
+        M[s-1] = M[s-1] * M[s]
+        s = s-1
+        
+    }
+    
+    //div function
+    func div() {
+        M[s-1] = M[s-1] / M[s]
+        s = s-1
+        
+    }
+    
     
     //start Function
     func startProgram() {
@@ -135,8 +149,10 @@ class Commands {
             sub()
             break
         case "MULT":
+            mult()
             break
         case "DIVI":
+            div()
             break
         case "INV":
             break
