@@ -179,6 +179,8 @@ class Commands {
         
     }
     
+    
+    
     //printing Funtion
     func printOutput(){
         printInAView(M[s].description, aTextView: outputView)
