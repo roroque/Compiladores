@@ -42,6 +42,20 @@ class Commands {
         
     }
     
+    //add function
+    func add() {
+        M[s-1] = M[s-1] + M[s]
+        s = s-1
+        
+    }
+    
+    //sub function
+    func sub() {
+        M[s-1] = M[s-1] - M[s]
+        s = s-1
+        
+    }
+    
     
     //start Function
     func startProgram() {
@@ -115,8 +129,10 @@ class Commands {
             loadValue(firstParameter!)
             break
         case "ADD":
+            add()
             break
         case "SUB":
+            sub()
             break
         case "MULT":
             break
