@@ -237,6 +237,35 @@ class Commands {
         
     }
     
+    //alloc Function
+    func alloc(m : Int, n : Int) {
+        //equal to for int i = 0 ; i < n; i ++
+        for k in 0...(n - 1) {
+            s = s + 1
+            M[s] = M[m + k]
+            
+        }
+        
+    }
+    
+    //dalloc Function
+    func dalloc(m : Int, n : Int) {
+        //equal to for int k = n - 1; k >= 0; k--
+        for k in (0...(n - 1)).reverse() {
+            M[m+k] = M[s]
+            s = s-1
+            
+        }
+        
+    }
+    
+    //call Function
+    func call(t : Int) {
+        s = s + 1
+        M[s] = i + 1
+        i = t
+    }
+    
   
     
     
@@ -334,11 +363,13 @@ class Commands {
             printOutput()
             break
         case "ALLOC":
-            
+            alloc(firstParameter!, n: secondParameter!)
             break
         case "DALLOC":
+            dalloc(firstParameter!, n: secondParameter!)
             break
         case "CALL":
+            call(firstParameter!)
             break
         case "RETURN":
             break
