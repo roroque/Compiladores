@@ -17,6 +17,7 @@ class Commands {
     //Engine variables
     var s : Int = 0
     var M : [Int] = []
+    var i : Int = 0
     
     //class init
     init(aOutputView: NSTextView,aInputView : NSTextView){
@@ -179,14 +180,32 @@ class Commands {
         
     }
     
-    
-    
-    //printing Funtion
-    func printOutput(){
-        printInAView(M[s].description, aTextView: outputView)
+    //store function
+    func store(n : Int) {
+        M[n] = M[s]
         s = s-1
         
     }
+    
+    //jump function
+    func jump(t : Int){
+        i = t
+        
+    }
+    
+    //jump false function
+    func jumpFalse(t : Int){
+        if M[s] == 0 {
+            i = t
+        }else{
+            i = i + 1
+        }
+        s = s - 1
+        
+    }
+    
+    //
+    
     
     //reading Functions
     func startReading(){
@@ -194,6 +213,7 @@ class Commands {
         //enable text field for writing
         //disable text field to continue
         //olhar melhor essa logica
+        
     }
     
     func finishReading(value : Int){
@@ -204,8 +224,17 @@ class Commands {
         //olhar melhor essa logica
         printInAView(value.description, aTextView: inputView)
         
+    }
+    
+    
+    //printing Funtion
+    func printOutput(){
+        printInAView(M[s].description, aTextView: outputView)
+        s = s-1
         
     }
+    
+  
     
     
     
@@ -284,10 +313,13 @@ class Commands {
             haltProgram()
             break
         case "STR":
+            store(firstParameter!)
             break
         case "JMP":
+            jump(firstParameter!)
             break
         case "JMPF":
+            jumpFalse(firstParameter!)
             break
         case "NULL":
             break
