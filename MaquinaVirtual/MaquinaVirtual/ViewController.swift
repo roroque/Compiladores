@@ -27,11 +27,11 @@ class ViewController: NSViewController {
         
         engineReader = Reader()
         
-        
-        
-        
-        
-        
+        let text  = "sdhfiuhsdifhsdhf  sdhfushfuhsdf \nasndksdfsd\njaidjifjsid ansdnajsnd ndndn"
+        let commandsWithArguments = text.componentsSeparatedByString("\n")
+        let arguments = commandsWithArguments[1].componentsSeparatedByString(" ")
+        print(arguments[0])
+
     }
     
     override var representedObject: AnyObject? {
