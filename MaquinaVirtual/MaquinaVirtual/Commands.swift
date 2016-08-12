@@ -266,6 +266,12 @@ class Commands {
         i = t
     }
     
+    //return Function
+    func returnFromFunction() {
+        i = M[s]
+        s = s - 1
+    }
+    
   
     
     
@@ -372,6 +378,7 @@ class Commands {
             call(firstParameter!)
             break
         case "RETURN":
+            returnFromFunction()
             break
             
         default:
