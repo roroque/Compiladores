@@ -17,7 +17,7 @@ class Commands {
     //Engine variables
     var s : Int = 0
     var M : [Int] = []
-    var i : Int = 0
+    var i : Int = 0 //numero da instrucao
     
     //class init
     init(aOutputView: NSTextView,aInputView : NSTextView){
@@ -204,7 +204,10 @@ class Commands {
         
     }
     
-    //
+    //null
+    func null() {
+        //do nothing
+    }
     
     
     //reading Functions
@@ -322,6 +325,7 @@ class Commands {
             jumpFalse(firstParameter!)
             break
         case "NULL":
+            null()
             break
         case "RD":
             startReading()
@@ -330,6 +334,7 @@ class Commands {
             printOutput()
             break
         case "ALLOC":
+            
             break
         case "DALLOC":
             break
@@ -340,6 +345,11 @@ class Commands {
             
         default:
             print(command + " is not valid")
+        }
+        
+        //checar se o incremento ta implicito ou nao apenas se for algum dos jumps
+        if command != "JMP" || command != "JMPF" {
+            i = i + 1
         }
         
         
