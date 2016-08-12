@@ -696,7 +696,7 @@
                                     <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="UMj-Yx-oia">
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="UMj-Yx-oia">
                                     <rect key="frame" x="223" y="1" width="16" height="133"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -724,7 +724,7 @@
                                     <rect key="frame" x="-100" y="-100" width="87" height="18"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="qan-sj-8GG">
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="qan-sj-8GG">
                                     <rect key="frame" x="223" y="1" width="16" height="133"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>

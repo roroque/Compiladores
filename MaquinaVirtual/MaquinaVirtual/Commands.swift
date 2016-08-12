@@ -15,9 +15,11 @@ class Commands {
     var inputView : NSTextView
     
     //Engine variables
-    var s : Int = 0
-    var M : [Int] = []
+    var s : Int = 0 //numero da pilha
+    var M : [Int] = [] //pilha de dados
     var i : Int = 0 //numero da instrucao
+   
+    
     
     //class init
     init(aOutputView: NSTextView,aInputView : NSTextView){

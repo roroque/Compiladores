@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA4520A91D5E102000A0AD12 /* Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4520A81D5E102000A0AD12 /* Reader.swift */; };
 		FAA8EE971D5CF2400009020C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8EE961D5CF2400009020C /* AppDelegate.swift */; };
 		FAA8EE991D5CF2400009020C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA8EE981D5CF2400009020C /* ViewController.swift */; };
 		FAA8EE9B1D5CF2400009020C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA8EE9A1D5CF2400009020C /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA4520A81D5E102000A0AD12 /* Reader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reader.swift; sourceTree = "<group>"; };
 		FAA8EE931D5CF2400009020C /* MaquinaVirtual.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaquinaVirtual.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA8EE961D5CF2400009020C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAA8EE981D5CF2400009020C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				FAA8EEA51D5CF2540009020C /* Commands.swift */,
+				FA4520A81D5E102000A0AD12 /* Reader.swift */,
 				FAA8EE961D5CF2400009020C /* AppDelegate.swift */,
 				FAA8EE981D5CF2400009020C /* ViewController.swift */,
 				FAA8EE9A1D5CF2400009020C /* Assets.xcassets */,
@@ -136,6 +139,7 @@
 			files = (
 				FAA8EE991D5CF2400009020C /* ViewController.swift in Sources */,
 				FAA8EEA61D5CF2540009020C /* Commands.swift in Sources */,
+				FA4520A91D5E102000A0AD12 /* Reader.swift in Sources */,
 				FAA8EE971D5CF2400009020C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +283,7 @@
 				FAA8EEA41D5CF2400009020C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

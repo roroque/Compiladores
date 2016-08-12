@@ -15,6 +15,8 @@ class ViewController: NSViewController {
     @IBOutlet var OutputTextView: NSTextView!
     
     var engine : Commands?
+    var engineReader : Reader?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +25,7 @@ class ViewController: NSViewController {
         
         engine = Commands(aOutputView: OutputTextView,aInputView: InputTextView)
         
-        
+        engineReader = Reader()
         
         
         
