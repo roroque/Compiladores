@@ -70,33 +70,14 @@ class Reader {
     func openTxt() {
         
         var chooseFileWindow = NSOpenPanel()
-        chooseFileWindow.title = "Choose a txt file"
-        chooseFileWindow.canChooseDirectories = false
+        //chooseFileWindow.title = "Choose a txt file"
+        //chooseFileWindow.canChooseDirectories = false
         chooseFileWindow.runModal()
-        
-        pathUrl = pathUrl!
+
+        pathUrl = chooseFileWindow.URL?.path
         
     }
     
-    
-    func openFile() {
-        
-        var myFileDialog: NSOpenPanel = NSOpenPanel()
-        myFileDialog.runModal()
-        
-        // Get the path to the file chosen in the NSOpenPanel
-        var path = myFileDialog.URL?.path
-        
-        // Make sure that a path was chosen
-        if (path != nil) {
-            var err = NSError?()
-           // let text = String(contentsOfFile: path!)
-            
-            if !(err != nil) {
-               // NSLog(text!)
-            }
-        }
-    }
     
     
     
