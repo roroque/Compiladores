@@ -866,7 +866,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="VUU-DQ-2MX">
+                                                        <tableCellView identifier="IdentifierCell" id="VUU-DQ-2MX">
                                                             <rect key="frame" x="1" y="1" width="40" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -885,8 +885,8 @@
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>
-                                                <tableColumn width="116" minWidth="40" maxWidth="1000" id="0hX-Yy-YML">
-                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                <tableColumn width="116" minWidth="40" maxWidth="1000" id="0hX-Yy-YML" userLabel="Instrução">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Instrução">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -898,7 +898,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="2md-AM-Gv9">
+                                                        <tableCellView identifier="InstructionCell" id="2md-AM-Gv9">
                                                             <rect key="frame" x="44" y="1" width="116" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -918,7 +918,7 @@
                                                     </prototypeCellViews>
                                                 </tableColumn>
                                                 <tableColumn width="116" minWidth="40" maxWidth="1000" id="lYv-3F-sBV">
-                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Atributo 1">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -930,7 +930,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="XEP-X6-ucr">
+                                                        <tableCellView identifier="Atribute1Cell" id="XEP-X6-ucr">
                                                             <rect key="frame" x="163" y="1" width="116" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -950,7 +950,7 @@
                                                     </prototypeCellViews>
                                                 </tableColumn>
                                                 <tableColumn width="276" minWidth="40" maxWidth="1000" id="DUT-eZ-1sy">
-                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Atributo 2">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -962,7 +962,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="zAd-c1-s4j">
+                                                        <tableCellView identifier="Atribute2Cell" id="zAd-c1-s4j">
                                                             <rect key="frame" x="282" y="1" width="276" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -1004,6 +1004,7 @@
                     <connections>
                         <outlet property="InputTextView" destination="AFR-Wo-my8" id="7Cn-SH-7Xo"/>
                         <outlet property="OutputTextView" destination="AUm-wV-JVA" id="1hb-DS-LcM"/>
+                        <outlet property="instructionStackView" destination="w2H-yo-Cl2" id="j2t-ro-bbD"/>
                         <outlet property="stackView" destination="WrD-hM-ihm" id="4d1-cE-wX2"/>
                     </connections>
                 </viewController>
