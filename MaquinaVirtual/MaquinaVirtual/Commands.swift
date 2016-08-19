@@ -28,6 +28,23 @@ class Commands {
         inputView = aInputView
     }
     
+    //engine helpers
+    
+    func getStackCount() -> Int {
+   
+        return M.count
+    }
+    
+    func getStackRowContent(row : Int) -> String{
+        
+        if row < M.count {
+            return M[row].description
+        }
+        
+        return ""
+    }
+    
+    
     //Virtual Machine Functions
     
   
