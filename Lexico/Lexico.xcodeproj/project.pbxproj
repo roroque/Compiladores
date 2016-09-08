@@ -1,0 +1,302 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FAF572261D81826F00ADBD06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF572251D81826F00ADBD06 /* AppDelegate.swift */; };
+		FAF572281D81826F00ADBD06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF572271D81826F00ADBD06 /* ViewController.swift */; };
+		FAF5722A1D81826F00ADBD06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF572291D81826F00ADBD06 /* Assets.xcassets */; };
+		FAF5722D1D81826F00ADBD06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF5722B1D81826F00ADBD06 /* Main.storyboard */; };
+		FAF572351D81829300ADBD06 /* Analisador lexical.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF572341D81829300ADBD06 /* Analisador lexical.swift */; };
+		FAF572371D8182A300ADBD06 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF572361D8182A300ADBD06 /* Token.swift */; };
+		FAF572391D8182AF00ADBD06 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF572381D8182AF00ADBD06 /* Scanner.swift */; };
+		FAF5723B1D8182C400ADBD06 /* Tabela de Simbolos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5723A1D8182C400ADBD06 /* Tabela de Simbolos.swift */; };
+		FAF5723D1D8182D200ADBD06 /* Simbolo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5723C1D8182D200ADBD06 /* Simbolo.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FAF572221D81826F00ADBD06 /* Lexico.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lexico.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAF572251D81826F00ADBD06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FAF572271D81826F00ADBD06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FAF572291D81826F00ADBD06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FAF5722C1D81826F00ADBD06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FAF5722E1D81826F00ADBD06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAF572341D81829300ADBD06 /* Analisador lexical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Analisador lexical.swift"; sourceTree = "<group>"; };
+		FAF572361D8182A300ADBD06 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		FAF572381D8182AF00ADBD06 /* Scanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
+		FAF5723A1D8182C400ADBD06 /* Tabela de Simbolos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tabela de Simbolos.swift"; sourceTree = "<group>"; };
+		FAF5723C1D8182D200ADBD06 /* Simbolo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Simbolo.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FAF5721F1D81826F00ADBD06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FAF572191D81826F00ADBD06 = {
+			isa = PBXGroup;
+			children = (
+				FAF572241D81826F00ADBD06 /* Lexico */,
+				FAF572231D81826F00ADBD06 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FAF572231D81826F00ADBD06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAF572221D81826F00ADBD06 /* Lexico.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAF572241D81826F00ADBD06 /* Lexico */ = {
+			isa = PBXGroup;
+			children = (
+				FAF572251D81826F00ADBD06 /* AppDelegate.swift */,
+				FAF572271D81826F00ADBD06 /* ViewController.swift */,
+				FAF572341D81829300ADBD06 /* Analisador lexical.swift */,
+				FAF572361D8182A300ADBD06 /* Token.swift */,
+				FAF572381D8182AF00ADBD06 /* Scanner.swift */,
+				FAF5723A1D8182C400ADBD06 /* Tabela de Simbolos.swift */,
+				FAF5723C1D8182D200ADBD06 /* Simbolo.swift */,
+				FAF572291D81826F00ADBD06 /* Assets.xcassets */,
+				FAF5722B1D81826F00ADBD06 /* Main.storyboard */,
+				FAF5722E1D81826F00ADBD06 /* Info.plist */,
+			);
+			path = Lexico;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FAF572211D81826F00ADBD06 /* Lexico */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAF572311D81826F00ADBD06 /* Build configuration list for PBXNativeTarget "Lexico" */;
+			buildPhases = (
+				FAF5721E1D81826F00ADBD06 /* Sources */,
+				FAF5721F1D81826F00ADBD06 /* Frameworks */,
+				FAF572201D81826F00ADBD06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lexico;
+			productName = Lexico;
+			productReference = FAF572221D81826F00ADBD06 /* Lexico.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FAF5721A1D81826F00ADBD06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Gabriel Neves Ferreira";
+				TargetAttributes = {
+					FAF572211D81826F00ADBD06 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = FAF5721D1D81826F00ADBD06 /* Build configuration list for PBXProject "Lexico" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FAF572191D81826F00ADBD06;
+			productRefGroup = FAF572231D81826F00ADBD06 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FAF572211D81826F00ADBD06 /* Lexico */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FAF572201D81826F00ADBD06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF5722A1D81826F00ADBD06 /* Assets.xcassets in Resources */,
+				FAF5722D1D81826F00ADBD06 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FAF5721E1D81826F00ADBD06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAF572351D81829300ADBD06 /* Analisador lexical.swift in Sources */,
+				FAF572281D81826F00ADBD06 /* ViewController.swift in Sources */,
+				FAF5723D1D8182D200ADBD06 /* Simbolo.swift in Sources */,
+				FAF572261D81826F00ADBD06 /* AppDelegate.swift in Sources */,
+				FAF5723B1D8182C400ADBD06 /* Tabela de Simbolos.swift in Sources */,
+				FAF572391D8182AF00ADBD06 /* Scanner.swift in Sources */,
+				FAF572371D8182A300ADBD06 /* Token.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FAF5722B1D81826F00ADBD06 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAF5722C1D81826F00ADBD06 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FAF5722F1D81826F00ADBD06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FAF572301D81826F00ADBD06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FAF572321D81826F00ADBD06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Lexico/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.puc.neves.Lexico;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FAF572331D81826F00ADBD06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Lexico/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.puc.neves.Lexico;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FAF5721D1D81826F00ADBD06 /* Build configuration list for PBXProject "Lexico" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAF5722F1D81826F00ADBD06 /* Debug */,
+				FAF572301D81826F00ADBD06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAF572311D81826F00ADBD06 /* Build configuration list for PBXNativeTarget "Lexico" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAF572321D81826F00ADBD06 /* Debug */,
+				FAF572331D81826F00ADBD06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FAF5721A1D81826F00ADBD06 /* Project object */;
+}
