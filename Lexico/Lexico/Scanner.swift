@@ -42,7 +42,8 @@ class Scanner  {
     
     
     func removeCommentsAndBlankSpaces(text : String) -> String {
-        var modifiedText = text
+        
+        //var modifiedText = text.
         
         
         

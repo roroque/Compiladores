@@ -15,8 +15,19 @@ class Analisador  {
     var tokens : [Token] = []
     var textPointer : Int = 0
     var file : String?
+    var readerAndFormatter : Scanner?
     
     init(){
+        
+        readerAndFormatter = Scanner()
+    }
+    
+    func run() {
+        
+        if file != nil {
+            text = getText(file!)
+        }
+        
         
     }
     
@@ -32,10 +43,15 @@ class Analisador  {
     
     func getText(url : String) -> String? {
         
-        return nil
+        readerAndFormatter?.setUrl(url)
+        
+        return readerAndFormatter?.readFile()
+        
     }
     
     func cleanAText(text : String) -> String? {
+        
+        readerAndFormatter?.removeCommentsAndBlankSpaces(text)
         
         return nil
     }

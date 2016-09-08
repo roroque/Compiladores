@@ -12,10 +12,14 @@ class ViewController: NSViewController {
 
     @IBOutlet weak var readFileButton: NSButton!
     @IBOutlet weak var saveFileButton: NSButton!
+    
+    var analiser : Analisador?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        analiser = Analisador()
 
-        // Do any additional setup after loading the view.
     }
 
     override var representedObject: AnyObject? {
@@ -26,13 +30,15 @@ class ViewController: NSViewController {
     
     @IBAction func selectFile(sender: AnyObject) {
         
-        print(Analisador().askFile())
+        analiser?.file = analiser?.askFile()
         
         readFileButton.enabled = true
     }
     
     
     @IBAction func readFile(sender: AnyObject) {
+        
+        analiser?.run()
         
         saveFileButton.enabled = true
     }
