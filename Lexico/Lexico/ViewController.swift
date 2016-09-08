@@ -10,6 +10,8 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var readFileButton: NSButton!
+    @IBOutlet weak var saveFileButton: NSButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +23,25 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
+    
+    @IBAction func selectFile(sender: AnyObject) {
+        
+        print(Analisador().askFile())
+        
+        readFileButton.enabled = true
+    }
+    
+    
+    @IBAction func readFile(sender: AnyObject) {
+        
+        saveFileButton.enabled = true
+    }
+    
 
+    @IBAction func saveFile(sender: AnyObject) {
+    }
+    
+    
 
 }
 

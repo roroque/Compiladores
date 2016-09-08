@@ -7,3 +7,10 @@
 //
 
 import Cocoa
+
+
+class Tabela  {
+    
+    //future
+    
+}

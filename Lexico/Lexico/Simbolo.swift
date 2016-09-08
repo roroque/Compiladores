@@ -7,3 +7,16 @@
 //
 
 import Cocoa
+
+
+class Simbolo  {
+    
+    //use in the future
+    var lexema : String?
+    var escopo : Int?
+    var tipo : Int?
+    var memoria : Int?
+    
+    
+    
+}

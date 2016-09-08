@@ -673,29 +673,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RNn-Dy-bMM">
-                                <rect key="frame" x="189" y="206" width="103" height="32"/>
-                                <buttonCell key="cell" type="push" title="Select File" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Bqr-S1-kjr">
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VDm-P4-WOS">
+                                <rect key="frame" x="171" y="192" width="100" height="32"/>
+                                <buttonCell key="cell" type="push" title="SelectFile" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9ZW-bk-vlx">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="selectFile:" target="XfG-lQ-9wD" id="QIY-qh-jJm"/>
+                                </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="udw-SY-bgk">
-                                <rect key="frame" x="193" y="154" width="96" height="32"/>
-                                <buttonCell key="cell" type="push" title="Read File" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yuL-M3-V5j">
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AlU-J3-48t">
+                                <rect key="frame" x="174" y="74" width="97" height="32"/>
+                                <buttonCell key="cell" type="push" title="SaveFiles" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iwi-CG-Rhn">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="saveFile:" target="XfG-lQ-9wD" id="DIY-NM-JQs"/>
+                                </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MPd-3I-zqe">
-                                <rect key="frame" x="194" y="105" width="94" height="32"/>
-                                <buttonCell key="cell" type="push" title="Save File" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="J0p-QX-F26">
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P2k-Zb-vRF">
+                                <rect key="frame" x="171" y="136" width="99" height="32"/>
+                                <buttonCell key="cell" type="push" title="ReadFiles" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4ob-o2-gcQ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="readFile:" target="XfG-lQ-9wD" id="TqH-Tj-63W"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="readFileButton" destination="P2k-Zb-vRF" id="w5t-nk-TLU"/>
+                        <outlet property="saveFileButton" destination="AlU-J3-48t" id="uVP-lk-nHQ"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
