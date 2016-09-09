@@ -23,14 +23,18 @@ class Token  {
     
     func setLexema(lex : String) {
         
+        lexema = lex
+        
     }
     
     func setSimbolo(sims : Int) {
         
+        simbolo = sims
     }
     
     func setLineNumber(line : Int) {
         
+        lineNumber = line
     }
     
     func getLexema() -> String? {

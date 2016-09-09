@@ -26,6 +26,15 @@ class Analisador  {
         
         if file != nil {
             text = getText(file!)
+            
+            if text != nil{
+                
+                cleanText = cleanAText(text!)
+                print(cleanText!)
+                
+            }
+            
+            
         }
         
         
@@ -51,9 +60,9 @@ class Analisador  {
     
     func cleanAText(text : String) -> String? {
         
-        readerAndFormatter?.removeCommentsAndBlankSpaces(text)
         
-        return nil
+        
+        return readerAndFormatter?.removeCommentsAndBlankSpaces(text)
     }
     
     func getRespectiveSimbolo(lexema : String) -> Int? {
