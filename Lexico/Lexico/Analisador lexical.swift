@@ -33,7 +33,10 @@ class Analisador  {
                 print(cleanText!)
                 
                 while textPointer < cleanText?.characters.count {
-                     getNextToken()
+                    let receivedToken = getNextToken()
+                    if receivedToken != nil {
+                        print((receivedToken!.getLexema())! + " " + (receivedToken!.getSimbolo()?.description)!)
+                    }
                 }
                
                 
@@ -159,52 +162,61 @@ class Analisador  {
         let selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
         //print(selectedString)
         
-        //check if is a number
-        if  NSCharacterSet.decimalDigitCharacterSet().characterIsMember(selectedCharacter) {
-            //is number
-            readNumber()
-        }else{
-            //check if letter
-            if NSCharacterSet.letterCharacterSet().characterIsMember(selectedCharacter){
-                //is letter
-                return readIdentifiedOrReservedWord()
+        if selectedString != " " {
+        
+        
+            //check if is a number
+            if  NSCharacterSet.decimalDigitCharacterSet().characterIsMember(selectedCharacter) {
+                //is number
+                return readNumber()
             }else{
-                if selectedString == ":" {
-                    //is attribution
-                    return readAttribution()
+                //check if letter
+                if NSCharacterSet.letterCharacterSet().characterIsMember(selectedCharacter){
+                    //is letter
+                    return readIdentifiedOrReservedWord()
                 }else{
-                    if "+-*".containsString(String(selectedString)) {
-                        //is arithmetic operator
-                        return readArithmeticOperator()
+                    if selectedString == ":" {
+                        //is attribution
+                        return readAttribution()
                     }else{
-                        if "><=!".containsString(String(selectedString)){
-                            //is relational operator
-                            return readRelationalOperator()
+                        if "+-*".containsString(String(selectedString)) {
+                            //is arithmetic operator
+                            return readArithmeticOperator()
                         }else{
-                            if ";.(),".containsString(String(selectedString)) {
-                                //is punctuation
-                                return readPunctuation()
+                            if "><=!".containsString(String(selectedString)){
+                                //is relational operator
+                                return readRelationalOperator()
                             }else{
-                                //ERROR
+                                if ";.(),".containsString(String(selectedString)) {
+                                    //is punctuation
+                                    return readPunctuation()
+                                }else{
+                                    //ERROR
+                                    print("error")
+                                    print(selectedString)
+                                    print("-------")
+                                    textPointer = textPointer + 1
+
+                                    return nil
+                                }
                                 
-                                return nil
+                                
                             }
                             
                             
                         }
-                        
+                    
                         
                     }
-                
+                    
                     
                 }
                 
                 
             }
-            
-            
         }
-        
+            
+            textPointer = textPointer + 1
         return nil
     }
     
@@ -241,29 +253,171 @@ class Analisador  {
     }
     
     func readIdentifiedOrReservedWord() -> Token?{
+        let newString = cleanText! as NSString
+        var selectedCharacter = newString.characterAtIndex(textPointer)
+        var selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
         
-        return nil
+        //add letter to id
+        var id = String(selectedString)
+        
+        //read character
+        textPointer = textPointer + 1
+        selectedCharacter = newString.characterAtIndex(textPointer)
+        selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+        
+        //check if next letter is number or character or _
+        while NSCharacterSet.decimalDigitCharacterSet().characterIsMember(selectedCharacter) || NSCharacterSet.letterCharacterSet().characterIsMember(selectedCharacter) || selectedString == "_" {
+            //add letter to number
+            id.append(selectedString)
+            
+            //read character
+            textPointer = textPointer + 1
+            selectedCharacter = newString.characterAtIndex(textPointer)
+            selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+            
+        }
+        
+        var newToken = Token()
+        newToken.setLexema(id)
+        
+        
+        let simbolo = getRespectiveSimbolo(id)
+        if simbolo != nil {
+            
+            newToken.setSimbolo(simbolo!)
+            
+        }else{
+            newToken.setSimbolo(getRespectiveSimbolo("identificador")!)
+        }
+        
+        
+        return newToken
     }
     
     
     func readAttribution() -> Token?{
         
-        return nil
+        let newString = cleanText! as NSString
+        var selectedCharacter = newString.characterAtIndex(textPointer)
+        var selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+        
+        //add letter to id
+        var id = String(selectedString)
+        
+        //read character
+        textPointer = textPointer + 1
+        selectedCharacter = newString.characterAtIndex(textPointer)
+        selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+        
+        //check id two points or atribuicao
+        if selectedString == "=" {
+            id.append(selectedString)
+        }
+        
+        var newToken = Token()
+        newToken.setLexema(id)
+        newToken.setSimbolo(getRespectiveSimbolo(id)!)
+        
+        
+        return newToken
     }
     
     func readArithmeticOperator() -> Token?{
         
-        return nil
+        let newString = cleanText! as NSString
+        var selectedCharacter = newString.characterAtIndex(textPointer)
+        var selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+        
+        //add letter to id
+        var id = String(selectedString)
+        
+        //read character
+        textPointer = textPointer + 1
+        selectedCharacter = newString.characterAtIndex(textPointer)
+        selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+        
+        var newToken = Token()
+        newToken.setLexema(id)
+        newToken.setSimbolo(getRespectiveSimbolo(id)!)
+        
+        
+        return newToken
+
     }
     
     func readRelationalOperator() -> Token?{
         
-        return nil
+        let newString = cleanText! as NSString
+        var selectedCharacter = newString.characterAtIndex(textPointer)
+        var selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+        
+        //add letter to id
+        var id = String(selectedString)
+        
+        if selectedString == "!" || selectedString == "="{
+        
+            //read character
+            textPointer = textPointer + 1
+            selectedCharacter = newString.characterAtIndex(textPointer)
+            selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+            
+            //check id different
+            if selectedString == "=" {
+                id.append(selectedString)
+            }else{
+                //error
+                print("error")
+                print(id)
+                print("-----")
+                textPointer = textPointer + 1
+                return nil
+            }
+            
+        }else{
+            
+            //read character
+            textPointer = textPointer + 1
+            selectedCharacter = newString.characterAtIndex(textPointer)
+            selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+            
+            //check id different
+            if selectedString == "=" {
+                id.append(selectedString)
+            }
+            
+            
+        }
+        
+        var newToken = Token()
+        newToken.setLexema(id)
+        newToken.setSimbolo(getRespectiveSimbolo(id)!)
+        
+        textPointer = textPointer + 1
+
+        return newToken
     }
     
     func readPunctuation() -> Token?{
         
-        return nil
+        let newString = cleanText! as NSString
+        var selectedCharacter = newString.characterAtIndex(textPointer)
+        var selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+        
+        //add letter to id
+        var id = String(selectedString)
+        
+        //read character
+        textPointer = textPointer + 1
+        selectedCharacter = newString.characterAtIndex(textPointer)
+        selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+        
+        var newToken = Token()
+        newToken.setLexema(id)
+        newToken.setSimbolo(getRespectiveSimbolo(id)!)
+        
+        
+        return newToken
+
     }
     
     func saveTokensList(){

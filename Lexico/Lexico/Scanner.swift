@@ -139,10 +139,10 @@ class Scanner  {
                 
             }
         }
-
-        modifiedText = modifiedText.stringByReplacingOccurrencesOfString(" ", withString: "")
-        modifiedText = modifiedText.stringByReplacingOccurrencesOfString("\t", withString: "")
-        modifiedText = modifiedText.stringByReplacingOccurrencesOfString("\n", withString: "")
+        //errors on programa
+        //modifiedText = modifiedText.stringByReplacingOccurrencesOfString(" ", withString: "")
+        modifiedText = modifiedText.stringByReplacingOccurrencesOfString("\t", withString: " ")
+        modifiedText = modifiedText.stringByReplacingOccurrencesOfString("\n", withString: " ")
 
         
         return modifiedText
