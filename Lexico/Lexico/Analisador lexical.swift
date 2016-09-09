@@ -32,6 +32,11 @@ class Analisador  {
                 cleanText = cleanAText(text!)
                 print(cleanText!)
                 
+                while textPointer < cleanText?.characters.count {
+                     getNextToken()
+                }
+               
+                
             }
             
             
@@ -149,6 +154,56 @@ class Analisador  {
     }
     
     func getNextToken() -> Token?{
+        let newString = cleanText! as NSString
+        let selectedCharacter = newString.characterAtIndex(textPointer)
+        let selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+        //print(selectedString)
+        
+        //check if is a number
+        if  NSCharacterSet.decimalDigitCharacterSet().characterIsMember(selectedCharacter) {
+            //is number
+            readNumber()
+        }else{
+            //check if letter
+            if NSCharacterSet.letterCharacterSet().characterIsMember(selectedCharacter){
+                //is letter
+                return readIdentifiedOrReservedWord()
+            }else{
+                if selectedString == ":" {
+                    //is attribution
+                    return readAttribution()
+                }else{
+                    if "+-*".containsString(String(selectedString)) {
+                        //is arithmetic operator
+                        return readArithmeticOperator()
+                    }else{
+                        if "><=!".containsString(String(selectedString)){
+                            //is relational operator
+                            return readRelationalOperator()
+                        }else{
+                            if ";.(),".containsString(String(selectedString)) {
+                                //is punctuation
+                                return readPunctuation()
+                            }else{
+                                //ERROR
+                                
+                                return nil
+                            }
+                            
+                            
+                        }
+                        
+                        
+                    }
+                
+                    
+                }
+                
+                
+            }
+            
+            
+        }
         
         return nil
     }
