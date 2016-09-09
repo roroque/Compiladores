@@ -13,6 +13,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var readFileButton: NSButton!
     @IBOutlet weak var saveFileButton: NSButton!
     
+    @IBOutlet weak var text: NSTextField!
     var analiser : Analisador?
     
     override func viewDidLoad() {
@@ -45,7 +46,7 @@ class ViewController: NSViewController {
     
 
     @IBAction func saveFile(sender: AnyObject) {
-        
+        text.hidden = false
         analiser?.saveTokensList()
         
     }
