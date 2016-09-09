@@ -209,8 +209,35 @@ class Analisador  {
     }
     
     func readNumber() -> Token?{
+        let newString = cleanText! as NSString
+        var selectedCharacter = newString.characterAtIndex(textPointer)
+        var selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
         
-        return nil
+        //add letter to number
+        var numberString = String(selectedString)
+        
+        //read character
+        textPointer = textPointer + 1
+        selectedCharacter = newString.characterAtIndex(textPointer)
+        selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+        
+        //check if next letter is number
+        while NSCharacterSet.decimalDigitCharacterSet().characterIsMember(selectedCharacter) {
+            //add letter to number
+            numberString.append(selectedString)
+            
+            //read character
+            textPointer = textPointer + 1
+            selectedCharacter = newString.characterAtIndex(textPointer)
+            selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+            
+        }
+        
+        var newToken = Token()
+        newToken.setLexema(numberString)
+        newToken.setSimbolo(getRespectiveSimbolo("numero")!)
+        
+        return newToken
     }
     
     func readIdentifiedOrReservedWord() -> Token?{
