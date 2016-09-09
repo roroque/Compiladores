@@ -23,22 +23,30 @@ class Analisador  {
     }
     
     func run() {
-        
+        tokens = []
         if file != nil {
             text = getText(file!)
             
             if text != nil{
                 
                 cleanText = cleanAText(text!)
-                print(cleanText!)
                 
-                while textPointer < cleanText?.characters.count {
-                    let receivedToken = getNextToken()
-                    if receivedToken != nil {
-                        print((receivedToken!.getLexema())! + " " + (receivedToken!.getSimbolo()?.description)!)
+                if cleanText != nil {
+                    
+                
+                
+                    print(cleanText!)
+                    
+                    while textPointer < cleanText?.characters.count {
+                        let receivedToken = getNextToken()
+                        if receivedToken != nil {
+                            print((receivedToken!.getLexema())! + " " + (receivedToken!.getSimbolo()?.description)!)
+                            tokens.append(receivedToken!)
+                        }
                     }
+                }else{
+                    
                 }
-               
                 
             }
             
@@ -245,7 +253,7 @@ class Analisador  {
             
         }
         
-        var newToken = Token()
+        let newToken = Token()
         newToken.setLexema(numberString)
         newToken.setSimbolo(getRespectiveSimbolo("numero")!)
         
@@ -277,7 +285,7 @@ class Analisador  {
             
         }
         
-        var newToken = Token()
+        let newToken = Token()
         newToken.setLexema(id)
         
         
@@ -297,8 +305,6 @@ class Analisador  {
     
     func readAttribution() -> Token?{
         
-        let newString = cleanText! as NSString
-        var selectedCharacter = newString.characterAtIndex(textPointer)
         var selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
         
         //add letter to id
@@ -306,15 +312,16 @@ class Analisador  {
         
         //read character
         textPointer = textPointer + 1
-        selectedCharacter = newString.characterAtIndex(textPointer)
         selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
         
         //check id two points or atribuicao
         if selectedString == "=" {
             id.append(selectedString)
+            textPointer = textPointer + 1
+
         }
         
-        var newToken = Token()
+        let newToken = Token()
         newToken.setLexema(id)
         newToken.setSimbolo(getRespectiveSimbolo(id)!)
         
@@ -324,19 +331,15 @@ class Analisador  {
     
     func readArithmeticOperator() -> Token?{
         
-        let newString = cleanText! as NSString
-        var selectedCharacter = newString.characterAtIndex(textPointer)
-        var selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+        let selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
         
         //add letter to id
-        var id = String(selectedString)
+        let id = String(selectedString)
         
         //read character
         textPointer = textPointer + 1
-        selectedCharacter = newString.characterAtIndex(textPointer)
-        selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
         
-        var newToken = Token()
+        let newToken = Token()
         newToken.setLexema(id)
         newToken.setSimbolo(getRespectiveSimbolo(id)!)
         
@@ -347,8 +350,6 @@ class Analisador  {
     
     func readRelationalOperator() -> Token?{
         
-        let newString = cleanText! as NSString
-        var selectedCharacter = newString.characterAtIndex(textPointer)
         var selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
         
         //add letter to id
@@ -358,7 +359,6 @@ class Analisador  {
         
             //read character
             textPointer = textPointer + 1
-            selectedCharacter = newString.characterAtIndex(textPointer)
             selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
             
             //check id different
@@ -377,7 +377,6 @@ class Analisador  {
             
             //read character
             textPointer = textPointer + 1
-            selectedCharacter = newString.characterAtIndex(textPointer)
             selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
             
             //check id different
@@ -388,7 +387,7 @@ class Analisador  {
             
         }
         
-        var newToken = Token()
+        let newToken = Token()
         newToken.setLexema(id)
         newToken.setSimbolo(getRespectiveSimbolo(id)!)
         
@@ -399,19 +398,15 @@ class Analisador  {
     
     func readPunctuation() -> Token?{
         
-        let newString = cleanText! as NSString
-        var selectedCharacter = newString.characterAtIndex(textPointer)
-        var selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+        let selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
         
         //add letter to id
-        var id = String(selectedString)
+        let id = String(selectedString)
         
         //read character
         textPointer = textPointer + 1
-        selectedCharacter = newString.characterAtIndex(textPointer)
-        selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
         
-        var newToken = Token()
+        let newToken = Token()
         newToken.setLexema(id)
         newToken.setSimbolo(getRespectiveSimbolo(id)!)
         
@@ -422,6 +417,25 @@ class Analisador  {
     
     func saveTokensList(){
         
+        let newFile = "tokens.txt"
+        var content = ""
+        for selectedToken in tokens {
+            
+            content.appendContentsOf( selectedToken.getLexema()! + " " + (selectedToken.getSimbolo()?.description)! + "\n")
+            
+        }
+        
+        if let desktopPath : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DesktopDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
+            let path = desktopPath.stringByAppendingPathComponent(newFile);
+            do{
+                
+                try content.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding)
+                
+            } catch { 
+               print("error writing")
+            }
+        
+        }
     }
     
     func showError(errorNumber : Int){

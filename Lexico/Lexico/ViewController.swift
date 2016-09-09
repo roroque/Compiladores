@@ -45,6 +45,9 @@ class ViewController: NSViewController {
     
 
     @IBAction func saveFile(sender: AnyObject) {
+        
+        analiser?.saveTokensList()
+        
     }
     
     
