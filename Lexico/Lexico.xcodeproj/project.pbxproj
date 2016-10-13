@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FAA6CBC41DAFB39000B1DFC1 /* Analisador Sintatico.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6CBC31DAFB39000B1DFC1 /* Analisador Sintatico.swift */; };
 		FAF572261D81826F00ADBD06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF572251D81826F00ADBD06 /* AppDelegate.swift */; };
 		FAF572281D81826F00ADBD06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF572271D81826F00ADBD06 /* ViewController.swift */; };
 		FAF5722A1D81826F00ADBD06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF572291D81826F00ADBD06 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FAA6CBC31DAFB39000B1DFC1 /* Analisador Sintatico.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Analisador Sintatico.swift"; sourceTree = "<group>"; };
 		FAF572221D81826F00ADBD06 /* Lexico.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lexico.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF572251D81826F00ADBD06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAF572271D81826F00ADBD06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			children = (
 				FAF572251D81826F00ADBD06 /* AppDelegate.swift */,
 				FAF572271D81826F00ADBD06 /* ViewController.swift */,
+				FAA6CBC31DAFB39000B1DFC1 /* Analisador Sintatico.swift */,
 				FAF572341D81829300ADBD06 /* Analisador lexical.swift */,
 				FAF572361D8182A300ADBD06 /* Token.swift */,
 				FAF572381D8182AF00ADBD06 /* Scanner.swift */,
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAF572351D81829300ADBD06 /* Analisador lexical.swift in Sources */,
+				FAA6CBC41DAFB39000B1DFC1 /* Analisador Sintatico.swift in Sources */,
 				FAF572281D81826F00ADBD06 /* ViewController.swift in Sources */,
 				FAF5723D1D8182D200ADBD06 /* Simbolo.swift in Sources */,
 				FAF572261D81826F00ADBD06 /* AppDelegate.swift in Sources */,

@@ -12,14 +12,17 @@ class ViewController: NSViewController {
 
     @IBOutlet weak var readFileButton: NSButton!
     @IBOutlet weak var saveFileButton: NSButton!
+    @IBOutlet weak var SintaxReadButton: NSButton!
     
     @IBOutlet weak var text: NSTextField!
     var analiser : Analisador?
+    var sintaxer : Sintatico?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         analiser = Analisador()
+        sintaxer = Sintatico(analiser: analiser!)
 
     }
 
@@ -37,7 +40,7 @@ class ViewController: NSViewController {
         
         analiser?.run()
         
-        saveFileButton.isEnabled = true
+        SintaxReadButton.isEnabled = true
     }
     
 
@@ -47,6 +50,13 @@ class ViewController: NSViewController {
         
     }
     
+    @IBAction func SintaxRead(_ sender: AnyObject) {
+        
+        sintaxer?.run()
+        
+        saveFileButton.isEnabled = true
+        
+    }
     
 
 }
