@@ -23,6 +23,86 @@ class Sintatico {
         
         
     }
+    
+    func AnalisaBloco(){
+        
+    }
+    
+    func AnalisaDecVar(){
+        
+    }
+    
+    func AnalisaVar(){
+        
+    }
+    
+    func AnalisaTipo(){
+        
+    }
+    
+    func AnalisaComandos(){
+        
+    }
+    
+    func AnalisaComandoSimples(){
+        
+    }
+    
+    func AnalisaAtriChProcedimento(){
+        
+    }
+    
+    func AnalisaLeia(){
+        
+    }
+    
+    func AnalisaEscreva(){
+        
+    }
+    
+    func AnalisaEnquanto(){
+        
+    }
+    
+    func AnalisaSe(){
+        
+    }
+    
+    func AnalisaSubRotinas(){
+        
+    }
+    
+    func AnalisaDecProced(){
+        
+    }
+    
+    func AnalisaDecFunc(){
+        
+    }
+    
+    func AnalisaExp(){
+        
+    }
+    
+    func AnalisaExpSimp(){
+        
+    }
+    
+    func AnalisaTermo(){
+        
+    }
+    
+    func AnalisaFator(){
+        
+    }
+    
+    func AnalisaChProced(){
+        
+    }
+    
+    func AnalisaChFunc(){
+        
+    }
 
 
 
