@@ -8,6 +8,18 @@
 
 import Cocoa
 
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+    switch (lhs, rhs) {
+    case let (l?, r?):
+        return l < r
+    case (nil, _?):
+        return true
+    default:
+        return false
+    }
+}
+
+
 class Analisador  {
     
     var text : String?
@@ -61,12 +73,12 @@ class Analisador  {
         let chooseFileWindow = NSOpenPanel()
         chooseFileWindow.runModal()
         
-        let pathUrl = chooseFileWindow.URL?.path
+        let pathUrl = chooseFileWindow.url?.path
         
         return pathUrl
     }
     
-    func getText(url : String) -> String? {
+    func getText(_ url : String) -> String? {
         
         readerAndFormatter?.setUrl(url)
         
@@ -74,12 +86,12 @@ class Analisador  {
         
     }
     
-    func cleanAText(text : String) -> String? {
+    func cleanAText(_ text : String) -> String? {
 
         return readerAndFormatter?.removeCommentsAndBlankSpaces(text)
     }
     
-    func getRespectiveSimbolo(lexema : String) -> Int? {
+    func getRespectiveSimbolo(_ lexema : String) -> Int? {
         
         switch lexema {
         case "programa":
@@ -166,20 +178,20 @@ class Analisador  {
     
     func getNextToken() -> Token?{
         let newString = cleanText! as NSString
-        let selectedCharacter = newString.characterAtIndex(textPointer)
-        let selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+        let selectedCharacter = newString.character(at: textPointer)
+        let selectedString = cleanText![cleanText!.characters.index(cleanText!.startIndex, offsetBy: textPointer)]
         //print(selectedString)
         
         if selectedString != " " {
         
         
             //check if is a number
-            if  NSCharacterSet.decimalDigitCharacterSet().characterIsMember(selectedCharacter) {
+            if  CharacterSet.decimalDigits.contains(UnicodeScalar(selectedCharacter)!) {
                 //is number
                 return readNumber()
             }else{
                 //check if letter
-                if NSCharacterSet.letterCharacterSet().characterIsMember(selectedCharacter){
+                if CharacterSet.letters.contains(UnicodeScalar(selectedCharacter)!){
                     //is letter
                     return readIdentifiedOrReservedWord()
                 }else{
@@ -187,22 +199,26 @@ class Analisador  {
                         //is attribution
                         return readAttribution()
                     }else{
-                        if "+-*".containsString(String(selectedString)) {
+                        if "+-*".contains(String(selectedString)) {
                             //is arithmetic operator
                             return readArithmeticOperator()
                         }else{
-                            if "><=!".containsString(String(selectedString)){
+                            if "><=!".contains(String(selectedString)){
                                 //is relational operator
                                 return readRelationalOperator()
                             }else{
-                                if ";.(),".containsString(String(selectedString)) {
+                                if ";.(),".contains(String(selectedString)) {
                                     //is punctuation
                                     return readPunctuation()
                                 }else{
                                     //ERROR
-                                    print("error")
-                                    print(selectedString)
-                                    print("-------")
+                                    
+                                    
+                                        print("error")
+                                        print(selectedString)
+                                        print("-------")
+                                    showError(errorNumber: 0)
+                                    
                                     textPointer = textPointer + 1
 
                                     return nil
@@ -230,26 +246,26 @@ class Analisador  {
     
     func readNumber() -> Token?{
         let newString = cleanText! as NSString
-        var selectedCharacter = newString.characterAtIndex(textPointer)
-        var selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+        var selectedCharacter = newString.character(at: textPointer)
+        var selectedString = cleanText![cleanText!.characters.index(cleanText!.startIndex, offsetBy: textPointer)]
         
         //add letter to number
         var numberString = String(selectedString)
         
         //read character
         textPointer = textPointer + 1
-        selectedCharacter = newString.characterAtIndex(textPointer)
-        selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+        selectedCharacter = newString.character(at: textPointer)
+        selectedString = cleanText![cleanText!.characters.index(cleanText!.startIndex, offsetBy: textPointer)]
         
         //check if next letter is number
-        while NSCharacterSet.decimalDigitCharacterSet().characterIsMember(selectedCharacter) {
+        while CharacterSet.decimalDigits.contains(UnicodeScalar(selectedCharacter)!) {
             //add letter to number
             numberString.append(selectedString)
             
             //read character
             textPointer = textPointer + 1
-            selectedCharacter = newString.characterAtIndex(textPointer)
-            selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+            selectedCharacter = newString.character(at: textPointer)
+            selectedString = cleanText![cleanText!.characters.index(cleanText!.startIndex, offsetBy: textPointer)]
             
         }
         
@@ -262,26 +278,26 @@ class Analisador  {
     
     func readIdentifiedOrReservedWord() -> Token?{
         let newString = cleanText! as NSString
-        var selectedCharacter = newString.characterAtIndex(textPointer)
-        var selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+        var selectedCharacter = newString.character(at: textPointer)
+        var selectedString = cleanText![cleanText!.characters.index(cleanText!.startIndex, offsetBy: textPointer)]
         
         //add letter to id
         var id = String(selectedString)
         
         //read character
         textPointer = textPointer + 1
-        selectedCharacter = newString.characterAtIndex(textPointer)
-        selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+        selectedCharacter = newString.character(at: textPointer)
+        selectedString = cleanText![cleanText!.characters.index(cleanText!.startIndex, offsetBy: textPointer)]
         
         //check if next letter is number or character or _
-        while NSCharacterSet.decimalDigitCharacterSet().characterIsMember(selectedCharacter) || NSCharacterSet.letterCharacterSet().characterIsMember(selectedCharacter) || selectedString == "_" {
+        while CharacterSet.decimalDigits.contains(UnicodeScalar(selectedCharacter)!) || CharacterSet.letters.contains(UnicodeScalar(selectedCharacter)!) || selectedString == "_" {
             //add letter to number
             id.append(selectedString)
             
             //read character
             textPointer = textPointer + 1
-            selectedCharacter = newString.characterAtIndex(textPointer)
-            selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+            selectedCharacter = newString.character(at: textPointer)
+            selectedString = cleanText![cleanText!.characters.index(cleanText!.startIndex, offsetBy: textPointer)]
             
         }
         
@@ -305,14 +321,14 @@ class Analisador  {
     
     func readAttribution() -> Token?{
         
-        var selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+        var selectedString = cleanText![cleanText!.characters.index(cleanText!.startIndex, offsetBy: textPointer)]
         
         //add letter to id
         var id = String(selectedString)
         
         //read character
         textPointer = textPointer + 1
-        selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+        selectedString = cleanText![cleanText!.characters.index(cleanText!.startIndex, offsetBy: textPointer)]
         
         //check id two points or atribuicao
         if selectedString == "=" {
@@ -331,7 +347,7 @@ class Analisador  {
     
     func readArithmeticOperator() -> Token?{
         
-        let selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+        let selectedString = cleanText![cleanText!.characters.index(cleanText!.startIndex, offsetBy: textPointer)]
         
         //add letter to id
         let id = String(selectedString)
@@ -350,16 +366,16 @@ class Analisador  {
     
     func readRelationalOperator() -> Token?{
         
-        var selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+        var selectedString = cleanText![cleanText!.characters.index(cleanText!.startIndex, offsetBy: textPointer)]
         
         //add letter to id
         var id = String(selectedString)
         
-        if selectedString == "!" || selectedString == "="{
+        if selectedString == "!" {
         
             //read character
             textPointer = textPointer + 1
-            selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+            selectedString = cleanText![cleanText!.characters.index(cleanText!.startIndex, offsetBy: textPointer)]
             
             //check id different
             if selectedString == "=" {
@@ -370,35 +386,59 @@ class Analisador  {
                 print(id)
                 print("-----")
                 textPointer = textPointer + 1
+                showError(errorNumber: 0)
                 return nil
             }
             
+            
         }else{
-            
-            //read character
-            textPointer = textPointer + 1
-            selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
-            
-            //check id different
             if selectedString == "=" {
-                id.append(selectedString)
+                
+                //read character
+                textPointer = textPointer + 1
+                selectedString = cleanText![cleanText!.characters.index(cleanText!.startIndex, offsetBy: textPointer)]
+                
+                //check id different
+                if selectedString == "=" {
+                    id.append(selectedString)
+                }else{
+                    
+                }
+
+                
+                
+            }else{
+                
+                //read character
+                textPointer = textPointer + 1
+                selectedString = cleanText![cleanText!.characters.index(cleanText!.startIndex, offsetBy: textPointer)]
+                
+                //check id different
+                if selectedString == "=" {
+                    id.append(selectedString)
+                }
+                
+                
+                
             }
-            
             
         }
         
+        
+        
+       
         let newToken = Token()
         newToken.setLexema(id)
         newToken.setSimbolo(getRespectiveSimbolo(id)!)
         
-        textPointer = textPointer + 1
+        //textPointer = textPointer + 1
 
         return newToken
     }
     
     func readPunctuation() -> Token?{
         
-        let selectedString = cleanText![cleanText!.startIndex.advancedBy(textPointer)]
+        let selectedString = cleanText![cleanText!.characters.index(cleanText!.startIndex, offsetBy: textPointer)]
         
         //add letter to id
         let id = String(selectedString)
@@ -421,15 +461,15 @@ class Analisador  {
         var content = ""
         for selectedToken in tokens {
             
-            content.appendContentsOf( selectedToken.getLexema()! + " " + (selectedToken.getSimbolo()?.description)! + "\n")
+            content.append( selectedToken.getLexema()! + " " + (selectedToken.getSimbolo()?.description)! + "\n")
             
         }
         
-        if let desktopPath : NSString = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DesktopDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
-            let path = desktopPath.stringByAppendingPathComponent(newFile);
+        if let desktopPath : NSString = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.desktopDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true).first as NSString? {
+            let path = desktopPath.appendingPathComponent(newFile);
             do{
                 
-                try content.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding)
+                try content.write(toFile: path, atomically: false, encoding: String.Encoding.utf8)
                 
             } catch { 
                print("error writing")
@@ -439,6 +479,11 @@ class Analisador  {
     }
     
     func showError(errorNumber : Int){
+        
+        let alert:NSAlert = NSAlert();
+        alert.messageText = "Error";
+        alert.informativeText = "Check IDE for error";
+        alert.runModal();
         
     }
     

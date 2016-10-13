@@ -1,0 +1,13 @@
+programa 		test;
+var v: inteiro; 
+i,max, juro,: inteiro; início 
+enquanto v != -1 faca
+início 
+ leia(v);  leia(juro); 
+; leia(max); valor:= 1; i:= 1; 
+enquanto i <= max faca início 
+ 
+valor:= valor*(1+juro); 
+i:= i+1 fim; 
+escreva(valor) fim 
+fim. 

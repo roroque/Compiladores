@@ -21,18 +21,18 @@ class Token  {
     }
     
     
-    func setLexema(lex : String) {
+    func setLexema(_ lex : String) {
         
         lexema = lex
         
     }
     
-    func setSimbolo(sims : Int) {
+    func setSimbolo(_ sims : Int) {
         
         simbolo = sims
     }
     
-    func setLineNumber(line : Int) {
+    func setLineNumber(_ line : Int) {
         
         lineNumber = line
     }

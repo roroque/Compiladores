@@ -23,30 +23,26 @@ class ViewController: NSViewController {
 
     }
 
-    override var representedObject: AnyObject? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
+   
     
-    @IBAction func selectFile(sender: AnyObject) {
+    @IBAction func selectFile(_ sender: AnyObject) {
         
         analiser?.file = analiser?.askFile()
         
-        readFileButton.enabled = true
+        readFileButton.isEnabled = true
     }
     
     
-    @IBAction func readFile(sender: AnyObject) {
+    @IBAction func readFile(_ sender: AnyObject) {
         
         analiser?.run()
         
-        saveFileButton.enabled = true
+        saveFileButton.isEnabled = true
     }
     
 
-    @IBAction func saveFile(sender: AnyObject) {
-        text.hidden = false
+    @IBAction func saveFile(_ sender: AnyObject) {
+        text.isHidden = false
         analiser?.saveTokensList()
         
     }

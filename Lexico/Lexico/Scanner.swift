@@ -18,7 +18,7 @@ class Scanner  {
     
     }
     
-    func setUrl(url : String){
+    func setUrl(_ url : String){
         
         urlArquivo = url
         
@@ -40,7 +40,7 @@ class Scanner  {
     }
     
     
-    func removeCommentsAndBlankSpaces(text : String) -> String? {
+    func removeCommentsAndBlankSpaces(_ text : String) -> String? {
         
         var modifiedText = text
         
@@ -52,10 +52,10 @@ class Scanner  {
             firstIndex = 0
             secondIndex = 0
             //contains first piece and contains this type of commentary
-            if modifiedText.containsString("{") {
+            if modifiedText.contains("{") {
                 
                 //contais second go and find
-                if modifiedText.containsString("}"){
+                if modifiedText.contains("}"){
                     
                     //find first piece
                     for character in modifiedText.characters {
@@ -88,9 +88,9 @@ class Scanner  {
                         
                     }
                     
-                    let desiredRange = modifiedText.startIndex.advancedBy(firstIndex)...modifiedText.startIndex.advancedBy(secondIndex)
+                    let desiredRange = modifiedText.characters.index(modifiedText.startIndex, offsetBy: firstIndex)...modifiedText.characters.index(modifiedText.startIndex, offsetBy: secondIndex)
                     
-                    modifiedText.removeRange(desiredRange)
+                    modifiedText.removeSubrange(desiredRange)
                     
                     
                 }else{
@@ -104,7 +104,7 @@ class Scanner  {
             }else{
                 
                 //contains one but doenst contain the other
-                if modifiedText.containsString("}") {
+                if modifiedText.contains("}") {
                     //error de fecha chave
                     print("erro de comentario")
                     return nil
@@ -119,21 +119,23 @@ class Scanner  {
         
         }
         //put code to check if doesnt make any modifications break
-        while true {
         
+        while true {
+            firstIndex = 0
+            secondIndex = 0
             //check second type of commentary
             //contains first piece
-            if modifiedText.containsString("/*"){
+            if modifiedText.contains("/*"){
                 
                 //contains second piece
-                if modifiedText.containsString("*/") {
+                if modifiedText.contains("*/") {
                     
                     //find first piece
                     for character in modifiedText.characters {
                         
                         if character == "/"{
                             //check if next is *
-                            let selectedString = modifiedText[modifiedText.startIndex.advancedBy(firstIndex + 1)]
+                            let selectedString = modifiedText[modifiedText.characters.index(modifiedText.startIndex, offsetBy: firstIndex + 1)]
                             if selectedString == "*"{
                             break
                             
@@ -154,16 +156,19 @@ class Scanner  {
                     //find second piece
                     
                     for character in modifiedText.characters {
+                        if secondIndex != 0 {
+                            
                         
-                        if character == "/"{
-                            //check if before *
-                            //check if next is *
-                            let selectedString = modifiedText[modifiedText.startIndex.advancedBy(secondIndex - 1)]
-                            if selectedString == "*"{
-                                break
+                            if character == "/"{
+                                //check if before *
+                                //check if next is *
+                                let selectedString = modifiedText[modifiedText.characters.index(modifiedText.startIndex, offsetBy: secondIndex - 1)]
+                                if selectedString == "*"{
+                                    break
+                                    
+                                }
                                 
                             }
-                            
                         }
                         secondIndex = secondIndex + 1
                         
@@ -176,9 +181,9 @@ class Scanner  {
                         
                     }
                     
-                    let desiredRange = modifiedText.startIndex.advancedBy(firstIndex)...modifiedText.startIndex.advancedBy(secondIndex)
+                    let desiredRange = modifiedText.characters.index(modifiedText.startIndex, offsetBy: firstIndex)...modifiedText.characters.index(modifiedText.startIndex, offsetBy: secondIndex)
                     
-                    modifiedText.removeRange(desiredRange)
+                    modifiedText.removeSubrange(desiredRange)
                     
                     
                     
@@ -203,7 +208,7 @@ class Scanner  {
                 //doenst contain
                 
                 //contains one of them
-                if modifiedText.containsString("*/") {
+                if modifiedText.contains("*/") {
                     
                     //error de comentario
                     print("erro de comentario")
@@ -220,8 +225,10 @@ class Scanner  {
         }
         //errors on programa
         //modifiedText = modifiedText.stringByReplacingOccurrencesOfString(" ", withString: "")
-        modifiedText = modifiedText.stringByReplacingOccurrencesOfString("\t", withString: " ")
-        modifiedText = modifiedText.stringByReplacingOccurrencesOfString("\n", withString: " ")
+        modifiedText = modifiedText.replacingOccurrences(of: "\t", with: " ")
+        modifiedText = modifiedText.replacingOccurrences(of: "\n", with: " ")
+        modifiedText = modifiedText.replacingOccurrences(of: "\r", with: " ")
+
 
         
         return modifiedText
