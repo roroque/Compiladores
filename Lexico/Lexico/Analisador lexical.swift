@@ -91,7 +91,7 @@ class Analisador  {
         return readerAndFormatter?.removeCommentsAndBlankSpaces(text)
     }
     
-    func getRespectiveSimbolo(_ lexema : String) -> Int? {
+    func getRespectiveSimbolo( lexema : String) -> Int? {
         
         switch lexema {
         case "programa":
@@ -271,7 +271,7 @@ class Analisador  {
         
         let newToken = Token()
         newToken.setLexema(numberString)
-        newToken.setSimbolo(getRespectiveSimbolo("numero")!)
+        newToken.setSimbolo(getRespectiveSimbolo(lexema: "numero")!)
         
         return newToken
     }
@@ -305,13 +305,13 @@ class Analisador  {
         newToken.setLexema(id)
         
         
-        let simbolo = getRespectiveSimbolo(id)
+        let simbolo = getRespectiveSimbolo(lexema: id)
         if simbolo != nil {
             
             newToken.setSimbolo(simbolo!)
             
         }else{
-            newToken.setSimbolo(getRespectiveSimbolo("identificador")!)
+            newToken.setSimbolo(getRespectiveSimbolo(lexema: "identificador")!)
         }
         
         
@@ -339,7 +339,7 @@ class Analisador  {
         
         let newToken = Token()
         newToken.setLexema(id)
-        newToken.setSimbolo(getRespectiveSimbolo(id)!)
+        newToken.setSimbolo(getRespectiveSimbolo(lexema: id)!)
         
         
         return newToken
@@ -357,7 +357,7 @@ class Analisador  {
         
         let newToken = Token()
         newToken.setLexema(id)
-        newToken.setSimbolo(getRespectiveSimbolo(id)!)
+        newToken.setSimbolo(getRespectiveSimbolo(lexema: id)!)
         
         
         return newToken
@@ -429,7 +429,7 @@ class Analisador  {
        
         let newToken = Token()
         newToken.setLexema(id)
-        newToken.setSimbolo(getRespectiveSimbolo(id)!)
+        newToken.setSimbolo(getRespectiveSimbolo(lexema: id)!)
         
         //textPointer = textPointer + 1
 
@@ -448,7 +448,7 @@ class Analisador  {
         
         let newToken = Token()
         newToken.setLexema(id)
-        newToken.setSimbolo(getRespectiveSimbolo(id)!)
+        newToken.setSimbolo(getRespectiveSimbolo(lexema: id)!)
         
         
         return newToken
