@@ -45,14 +45,21 @@ class ViewController: NSViewController {
     
 
     @IBAction func saveFile(_ sender: AnyObject) {
-        text.isHidden = false
+        (text.cell as! NSTextFieldCell).title = "File Saved"
         analiser?.saveTokensList()
         
     }
     
     @IBAction func SintaxRead(_ sender: AnyObject) {
-        
-        sintaxer?.run()
+        text.isHidden = false
+        if (sintaxer?.run())!{
+            
+            (text.cell as! NSTextFieldCell).title = "Passou Sintatico"
+            
+        }else{
+            
+            (text.cell as! NSTextFieldCell).title = "Falhou Sintatico"
+        }
         
         saveFileButton.isEnabled = true
         

@@ -61,8 +61,8 @@ class Sintatico {
     }
     
     
-    func run() {
-        
+    func run() -> Bool {
+        pointer = -1
         //print(maquinaAnalisador.tokens)
         getToken()
         if selectedToken!.getSimbolo()! == Simbolos.Sprograma.rawValue  {
@@ -78,28 +78,29 @@ class Sintatico {
                     if selectedToken!.getSimbolo() == Simbolos.Sponto.rawValue {
                         if pointer == (maquinaAnalisador.tokens.count - 1){
                             print("Sucesso")
+                            return true
 
                         }else{
                             ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
-                            return
+                            return false
 
 
                         }
                         
                     }else{
                         ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
-                        return
+                        return false
                     }
                     
                 }else{
                     ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
-                    return
+                    return false
                 }
                 
             }else{
 
                 ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
-                return
+                return false
             
             }
             
@@ -107,7 +108,7 @@ class Sintatico {
         }else{
 
             ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
-            return
+            return false
         
         }
      

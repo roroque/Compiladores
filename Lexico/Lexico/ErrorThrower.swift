@@ -15,6 +15,7 @@ class ErrorThrower  {
         alert.messageText = "Error";
         alert.informativeText = errorNumber;
         alert.runModal();
+        exit(1)
         
     }
     
