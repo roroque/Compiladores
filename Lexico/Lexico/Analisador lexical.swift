@@ -158,7 +158,7 @@ class Analisador  {
             return 31
         case "*":
             return 32
-        case "Div":
+        case "div":
             return 33
         case "e":
             return 34
@@ -380,6 +380,7 @@ class Analisador  {
             //check id different
             if selectedString == "=" {
                 id.append(selectedString)
+                textPointer = textPointer + 1
             }else{
                 //error
                 print("error")

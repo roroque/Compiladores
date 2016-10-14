@@ -521,7 +521,7 @@ class Sintatico {
         }
         
         AnalisaTermo()
-        while selectedToken!.getSimbolo() == Simbolos.Smais.rawValue || selectedToken!.getSimbolo() == Simbolos.Smenos.rawValue || selectedToken!.getSimbolo() == Simbolos.Sor.rawValue {
+        while selectedToken!.getSimbolo() == Simbolos.Smais.rawValue || selectedToken!.getSimbolo() == Simbolos.Smenos.rawValue || selectedToken!.getSimbolo() == Simbolos.Sor.rawValue || selectedToken!.getSimbolo() == Simbolos.Sand.rawValue || selectedToken!.getSimbolo() ==  Simbolos.Sdiv.rawValue {
             getToken()
             AnalisaTermo()
         }
