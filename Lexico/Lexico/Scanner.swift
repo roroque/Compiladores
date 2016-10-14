@@ -83,7 +83,7 @@ class Scanner  {
                     if secondIndex < firstIndex{
                         
                         //error de chave
-                        print("erro de comentario")
+                        ErrorThrower().showError(errorNumber: "error\n erro de comentario {} ")
                         return nil
                         
                     }
@@ -96,7 +96,7 @@ class Scanner  {
                 }else{
                     
                     //error de chave
-                    print("erro de comentario")
+                    ErrorThrower().showError(errorNumber: "error\n erro de comentario {} ")
                     return nil
                     
                 }
@@ -106,7 +106,7 @@ class Scanner  {
                 //contains one but doenst contain the other
                 if modifiedText.contains("}") {
                     //error de fecha chave
-                    print("erro de comentario")
+                    ErrorThrower().showError(errorNumber: "error\n erro de comentario {} ")
                     return nil
                     
                 }else{
@@ -141,7 +141,7 @@ class Scanner  {
                             
                             }else{
                                 
-                                print("erro de comentario")
+                               ErrorThrower().showError(errorNumber: "error\n erro de comentario /**/ ")
                                 return nil
                             }
                             
@@ -176,7 +176,7 @@ class Scanner  {
                     if secondIndex < firstIndex{
                         
                         //error de chave
-                        print("erro de comentario")
+                        ErrorThrower().showError(errorNumber: "error\n erro de comentario /**/ ")
                         return nil
                         
                     }
@@ -196,7 +196,7 @@ class Scanner  {
                     
                     //doenst contains one of them
                     //error de comentario
-                    print("erro de comentario")
+                    ErrorThrower().showError(errorNumber: "error\n erro de comentario /**/ ")
                     return nil
                     
                     
@@ -211,7 +211,7 @@ class Scanner  {
                 if modifiedText.contains("*/") {
                     
                     //error de comentario
-                    print("erro de comentario")
+                    ErrorThrower().showError(errorNumber: "error\n erro de comentario /**/ ")
                     return nil
                 }else{
                     

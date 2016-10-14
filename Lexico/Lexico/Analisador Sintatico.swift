@@ -169,7 +169,7 @@ class Sintatico {
             }
             
             
-        }while selectedToken!.getSimbolo() != Simbolos.Spontovirgula.rawValue
+        }while selectedToken!.getSimbolo() != Simbolos.Sdoispontos.rawValue
         getToken()
         AnalisaTipo()
         
@@ -224,7 +224,7 @@ class Sintatico {
     func AnalisaComandoSimples(){
         
         if selectedToken!.getSimbolo() == Simbolos.Sidentificador.rawValue {
-            AnalisaChProced()
+            AnalisaAtriChProcedimento()
         }else{
             
             if selectedToken!.getSimbolo() == Simbolos.Sse.rawValue {
@@ -594,17 +594,21 @@ class Sintatico {
     func AnalisaChProced(){
         
         //so checar se foi um procedimento tambem conhecido como um identificador
+       
         
     }
     
     func AnalisaChFunc(){
         //olhar analisa fator checar o que deve ser feito
+        getToken()
         
     }
     
     func AnalisaAtribuicao() {
         
-        //tomar cuidado talvez seja muito pouco
+        getToken()
+        AnalisaExp()
+        
         
     }
     

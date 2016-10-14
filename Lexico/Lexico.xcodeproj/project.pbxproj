@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA1A4C481DB0E3A600A77D3C /* ErrorThrower.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1A4C471DB0E3A600A77D3C /* ErrorThrower.swift */; };
 		FAA6CBC41DAFB39000B1DFC1 /* Analisador Sintatico.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6CBC31DAFB39000B1DFC1 /* Analisador Sintatico.swift */; };
 		FAF572261D81826F00ADBD06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF572251D81826F00ADBD06 /* AppDelegate.swift */; };
 		FAF572281D81826F00ADBD06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF572271D81826F00ADBD06 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA1A4C471DB0E3A600A77D3C /* ErrorThrower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorThrower.swift; sourceTree = "<group>"; };
 		FAA6CBC31DAFB39000B1DFC1 /* Analisador Sintatico.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Analisador Sintatico.swift"; sourceTree = "<group>"; };
 		FAF572221D81826F00ADBD06 /* Lexico.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lexico.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF572251D81826F00ADBD06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				FAF572291D81826F00ADBD06 /* Assets.xcassets */,
 				FAF5722B1D81826F00ADBD06 /* Main.storyboard */,
 				FAF5722E1D81826F00ADBD06 /* Info.plist */,
+				FA1A4C471DB0E3A600A77D3C /* ErrorThrower.swift */,
 			);
 			path = Lexico;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				FAA6CBC41DAFB39000B1DFC1 /* Analisador Sintatico.swift in Sources */,
 				FAF572281D81826F00ADBD06 /* ViewController.swift in Sources */,
 				FAF5723D1D8182D200ADBD06 /* Simbolo.swift in Sources */,
+				FA1A4C481DB0E3A600A77D3C /* ErrorThrower.swift in Sources */,
 				FAF572261D81826F00ADBD06 /* AppDelegate.swift in Sources */,
 				FAF5723B1D8182C400ADBD06 /* Tabela de Simbolos.swift in Sources */,
 				FAF572391D8182AF00ADBD06 /* Scanner.swift in Sources */,

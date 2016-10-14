@@ -217,7 +217,7 @@ class Analisador  {
                                         print("error")
                                         print(selectedString)
                                         print("-------")
-                                    showError(errorNumber: 0)
+                                    ErrorThrower().showError(errorNumber: "error\n \(selectedString) ")
                                     
                                     textPointer = textPointer + 1
 
@@ -386,7 +386,7 @@ class Analisador  {
                 print(id)
                 print("-----")
                 textPointer = textPointer + 1
-                showError(errorNumber: 0)
+                ErrorThrower().showError(errorNumber: "error\n \(selectedString) ")
                 return nil
             }
             
@@ -416,6 +416,7 @@ class Analisador  {
                 //check id different
                 if selectedString == "=" {
                     id.append(selectedString)
+                    textPointer = textPointer + 1
                 }
                 
                 
@@ -478,14 +479,6 @@ class Analisador  {
         }
     }
     
-    func showError(errorNumber : Int){
-        
-        let alert:NSAlert = NSAlert();
-        alert.messageText = "Error";
-        alert.informativeText = "Check IDE for error";
-        alert.runModal();
-        
-    }
     
     
     
