@@ -80,27 +80,35 @@ class Sintatico {
                             print("Sucesso")
 
                         }else{
-                            print("ERROR")
+                            ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+                            return
+
 
                         }
                         
                     }else{
-                        print("ERROR")
-                        
+                        ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+                        return
                     }
                     
                 }else{
-                    print("ERROR")
-
+                    ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+                    return
                 }
                 
             }else{
-                print("ERROR")
+
+                ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+                return
+            
             }
             
             
         }else{
-            print("ERROR")
+
+            ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+            return
+        
         }
      
     }
@@ -121,15 +129,16 @@ class Sintatico {
                     if selectedToken!.getSimbolo() == Simbolos.Spontovirgula.rawValue {
                         getToken()
                     }else{
-                        print("ERROR")
+                        ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+                        return
                         
                     }
                     
                 }
                 
             }else{
-                print("ERROR")
-                
+                ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+                return
             }
             
             
@@ -150,8 +159,8 @@ class Sintatico {
                         getToken()
                         if selectedToken!.getSimbolo() == Simbolos.Sdoispontos.rawValue {
                             
-                            print("ERROR")
-                            
+                            ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+                            return
                         }
                         
                         
@@ -159,13 +168,13 @@ class Sintatico {
                     
                     
                 }else{
-                    print("ERROR")
-                    
+                    ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+                    return
                 }
                 
             }else{
-                print("ERROR")
-                
+                ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+                return
             }
             
             
@@ -180,8 +189,8 @@ class Sintatico {
         
         if selectedToken!.getSimbolo() != Simbolos.Sinteiro.rawValue && selectedToken!.getSimbolo() != Simbolos.Sbooleano.rawValue {
             
-            print("ERROR")
-
+            ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+            return
         }
         
         getToken()
@@ -205,8 +214,8 @@ class Sintatico {
                     
                     
                 }else{
-                    print("ERROR")
-                    
+                    ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+                    return
                 }
             }
             
@@ -214,8 +223,8 @@ class Sintatico {
             
         }else{
             
-            print("ERROR")
-            
+            ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+            return
         }
         
         
@@ -294,23 +303,23 @@ class Sintatico {
                 
                 }else{
                     
-                    print("ERROR")
-                    
+                    ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+                    return
                 }
                 
                 
             }else{
                 
-                print("ERROR")
-                
+                ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+                return
             }
             
             
             
         }else{
             
-            print("ERROR")
-            
+            ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+            return
         }
         
         
@@ -329,22 +338,22 @@ class Sintatico {
                     getToken()
                 }else{
                     
-                    print("ERROR")
-                    
+                    ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+                    return
                 }
                 
                 
             }else{
                 
-                print("ERROR")
-                
+                ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+                return
             }
             
             
         }else{
             
-            print("ERROR")
-            
+            ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+            return
         }
         
         
@@ -362,8 +371,8 @@ class Sintatico {
             
         }else{
             
-            print("ERROR")
-            
+            ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+            return
         }
         
         
@@ -386,8 +395,8 @@ class Sintatico {
             
         }else{
             
-            print("ERROR")
-            
+            ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+            return
         }
         
         
@@ -414,8 +423,8 @@ class Sintatico {
                 getToken()
             }else{
                 
-                print("ERROR")
-                
+                ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+                return
             }
             
             
@@ -435,15 +444,15 @@ class Sintatico {
                 AnalisaBloco()
             }else{
                 
-                print("ERROR")
-                
+                ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+                return
             }
             
             
         }else{
             
-            print("ERROR")
-            
+            ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+            return
         }
         
         
@@ -471,22 +480,22 @@ class Sintatico {
                     
                 }else{
                     
-                    print("ERROR")
-                    
+                    ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+                    return
                 }
                 
                 
             }else{
                 
-                print("ERROR")
-                
+                ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+                return
             }
             
             
         }else{
             
-            print("ERROR")
-            
+            ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+            return
         }
         
         
@@ -563,8 +572,8 @@ class Sintatico {
                             getToken()
                         }else{
                             
-                            print("ERROR")
-                            
+                            ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+                            return
                         }
                         
                     }else{
@@ -573,8 +582,8 @@ class Sintatico {
                             getToken()
                         }else{
                             
-                            print("ERROR")
-                            
+                            ErrorThrower().showError(errorNumber: "error\n obtido \(selectedToken!.getLexema()) token numero : \(pointer) ")
+                            return
                             
                         }
                         

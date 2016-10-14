@@ -74,10 +74,10 @@
 				FAF572381D8182AF00ADBD06 /* Scanner.swift */,
 				FAF5723A1D8182C400ADBD06 /* Tabela de Simbolos.swift */,
 				FAF5723C1D8182D200ADBD06 /* Simbolo.swift */,
+				FA1A4C471DB0E3A600A77D3C /* ErrorThrower.swift */,
 				FAF572291D81826F00ADBD06 /* Assets.xcassets */,
 				FAF5722B1D81826F00ADBD06 /* Main.storyboard */,
 				FAF5722E1D81826F00ADBD06 /* Info.plist */,
-				FA1A4C471DB0E3A600A77D3C /* ErrorThrower.swift */,
 			);
 			path = Lexico;
 			sourceTree = "<group>";
